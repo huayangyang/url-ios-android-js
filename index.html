@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+
+	</body>
+	<script type="text/javascript">
+		//获取当前url路径
+		var url = document.location.toString();
+		var tempArr, queryString, xmId;
+		if(url.lastIndexOf('?') != -1) {
+			queryString = url.substring(url.lastIndexOf("?") + 1, url.length);
+			tempArr = queryString.split("&");
+			//获取第一个参数
+			xmId = tempArr[0].split("=")[1];
+		}
+		//将第一个参数存在本地
+		localStorage.orderId = xmId;
+	</script>
+
+</html>
